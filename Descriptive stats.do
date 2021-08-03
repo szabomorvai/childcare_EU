@@ -1,8 +1,11 @@
-* Descriptive stats table
-* Eurovi 2017/06/13
-
-use	"C:\Users\szabo\OneDrive\Documents\Dropbox\Eurovi\Data_and_info\reg_sample_1Q.dta",	clear
-*use	"C:\Users\szabo\OneDrive\Documents\Dropbox\Eurovi\Data_and_info\reg_sample_2Q.dta",	clear
+***Where Can Childcare Expansion Increase Mothers’ Labor Force Participation? A Comparison of Quasi-Experimental Estimates from 7 Countries
+*Agnes Szabo-Morvai* and Anna Lovasz**
+*July 27, 2021
+cd "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\work"
+global root "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\eulfs_panel"
+global mothers "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\mothers"
+global results "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\results"
+use "$mothers\EULFS_eurovi_pooled_final.dta", clear
 keep if m == 1
 
 **************1Q / 2Q??*******************
