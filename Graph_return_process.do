@@ -1,11 +1,10 @@
-***EUROVI project - EU LFS - HU sample and activity graph replication
-***may 2016, Anna & Ági
+***Where Can Childcare Expansion Increase Mothersâ€™ Labor Force Participation? A Comparison of Quasi-Experimental Estimates from 7 Countries
+*Agnes Szabo-Morvai* and Anna Lovasz**
+*July 27, 2021
 
 
-*Anna directory:
-*cd "C:\Users\Anna\Dropbox (E3 - Lendület)\data"
-*Ági directory:
-cd "D:\Files\Adatok\LFS1983-2012_YC\panel\mothers"
+global root "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\eulfs_panel"
+cd "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\mothers"
 global graphlib "C:\Users\szabo\OneDrive\Documents\Dropbox\Eurovi\Graphs"
 set scheme s2color
 
@@ -27,11 +26,8 @@ SK	703
 
 *foreach country in 40 203 233 250 300 348 380 428 440 616 620 703 {
 
-use "D:\Files\Adatok\LFS1983-2012_YC\panel\mothers\EULFS_eurovi_pooled_final_agi.dta", clear
+use "$mothers\EULFS_eurovi_pooled_final.dta", clear
 merge m:1 year country hhage14 using "D:\Files\Family_policy_data\Database_gen\institutions.dta", nogen
-
-*keep if country==`country'
-
 keep HHid country year hhage14 ecec wave hhseqnum wght refyear rem activ emp ftpt ilostat quarter hhage14 ///
 cashben ecec kidage_qtr kidage_yr
 
