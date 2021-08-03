@@ -1,23 +1,20 @@
-*Anna directory:
-cd "C:\Users\Anna\Dropbox (E3 - Lendület)\Eurovi\Data_and_info\mothers"
-*global root "C:\Users\Anna\Dropbox (E3 - Lendület)\Eurovi\Data_and_info\mothers"
+***Where Can Childcare Expansion Increase Mothersâ€™ Labor Force Participation? A Comparison of Quasi-Experimental Estimates from 7 Countries
+*Agnes Szabo-Morvai* and Anna Lovasz**
+*July 27, 2021
 
-*Ági directory:
-*cd "C:\Users\szabo\OneDrive\Documents\LFS1983-2012_YC\panel\mothers"
-*global root "C:\Users\szabo\OneDrive\Documents\LFS1983-2012_YC\panel\eulfs_panel"
-
+cd "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\work"
+global root "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\eulfs_panel"
+global mothers "C:\Users\szabomorvai.agnes\Dropbox\Research\Eurovi\Data_and_info\mothers"
 
 
 global control2 isced* mst* age
-*global control3 $control2 age_sq hhnbchld hhnb0014 hhnbch2 hhnbch5 hhnbch8 hhnbch11 hhnbch14 hhnbch17 hhnbch24 hhnbinac
-*global control3 $control2 age_sq hhnbchld hhnbinac
 global control3 $control2 age_sq
 global control4 $control3 yr*  
 global control5 $control4 dregion* 
 
 
 ***country-specific final dataset prep*****************************************************************************************************
-use "EULFS_eurovi_pooled_final_Anna.dta", clear
+use "$mothers\EULFS_eurovi_pooled_final.dta", clear
 
 ********* SAMPLE RESTRICTIONS***************************************************
 * keep only mothers, females, with child under 6 and over 2,  those who were born in that very country (because of beliefs, values)
@@ -98,6 +95,6 @@ est store TSq1c`country'
 }
 est table T*, keep(T m mT) stats(N r2) p 
 
-outreg2 T [T*] using "C:\Users\Anna\Dropbox (E3 - Lendület)\Eurovi\Results\Reasons_EULFS_10jun2017" , excel replace keep(T m mT) stats(coef pval) alpha(0.01, 0.05, 0.1)
+outreg2 T [T*] using "C:\Users\Anna\Dropbox (E3 - LendÃ¼let)\Eurovi\Results\Reasons_EULFS_10jun2017" , excel replace keep(T m mT) stats(coef pval) alpha(0.01, 0.05, 0.1)
 
 est drop T*
