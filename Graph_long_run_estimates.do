@@ -1,5 +1,5 @@
 use C:\Users\szabo\OneDrive\Documents\Dropbox\Eurovi\Data_and_info\Long_run_results.dta, clear
-global graphlib "C:\Users\szabo\OneDrive\Documents\Dropbox\Eurovi\results\Graph_14sep2017"
+global graphlib "C:\Users\szabo\OneDrive\Documents\Dropbox\Eurovi\results\Graph"
 
 reshape long q, i(country estimate) j(time)
 rename q q_
